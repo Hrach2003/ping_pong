@@ -113,7 +113,7 @@ function render() {
 //control the user paddle
 canvas.addEventListener("mousemove", movePaddle);
 if (is_mobile) {
-  canvas.addEventListener("touchmove", movePaddle);
+  document.addEventListener("touchmove", movePaddle);
 }
 function movePaddle(evt) {
   let rect = canvas.getBoundingClientRect();
