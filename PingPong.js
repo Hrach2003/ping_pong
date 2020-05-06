@@ -4,9 +4,9 @@ const canvasText = canvas.getContext("2d");
 
 const is_mobile =
   !!navigator.userAgent.match(/iphone|android|blackberry/gi) || false;
-// if (is_mobile) {
-//   screen.orientation.lock("landscape");
-// }
+if (is_mobile) {
+  screen.orientation.lock("landscape");
+}
 
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
@@ -72,7 +72,7 @@ function drawCircle(x, y, r, color) {
 //draw text
 function drawText(text, x, y, color) {
   canvasText.fillStyle = color;
-  canvasText.font = `${canvas.height / 10}px fantasy`;
+  canvasText.font = `${canvas.height / 10}px Arial`;
   canvasText.fillText(text, x, y);
 }
 
