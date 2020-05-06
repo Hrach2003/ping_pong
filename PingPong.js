@@ -22,16 +22,16 @@ function openFullscreen() {
 
 openFullscreen();
 
-if (is_mobile) {
-  screen.orientation
-    .lock("landscape")
-    .then(function () {
-      alert("Locked");
-    })
-    .catch(function (error) {
-      alert(error);
-    });
-}
+// if (is_mobile) {
+//   screen.orientation
+//     .lock("landscape")
+//     .then(function () {
+//       alert("Locked");
+//     })
+//     .catch(function (error) {
+//       alert(error);
+//     });
+// }
 
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
