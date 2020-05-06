@@ -15,9 +15,9 @@ const canvasText = canvas.getContext("2d");
 
 const is_mobile =
   !!navigator.userAgent.match(/iphone|android|blackberry/gi) || false;
-if (is_mobile) {
-  screen.orientation.lock("landscape");
-}
+// if (is_mobile) {
+//   screen.orientation.lock("landscape");
+// }
 
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
