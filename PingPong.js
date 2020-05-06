@@ -1,14 +1,3 @@
-// 1 ---  canvas.getContext("2d")                       - +
-// 2 --- canvasText.fillRect                            - +
-// 3 --- canvasText.fillStyle                           - +
-// 4 --- canvasText.beginPath                           - +
-// 5 --- canvasText.arc                                 - +
-// 6 --- canvasText.fill                                - +
-
-// 7 --- canvasText.font                                -
-// 8 --- canvas.addEventListener( type : "mousemove")   -
-// 9 ---  canvas.getBoundingClientRect()                -
-
 const canvas = document.getElementById("pong");
 const canvasText = canvas.getContext("2d");
 //the user paddle
