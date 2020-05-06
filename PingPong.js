@@ -48,7 +48,7 @@ const ball = {
   x: canvas.width / 2,
   y: canvas.height / 2,
   radius: canvas.height / 60,
-  speed: 4,
+  speed: 5,
   velocityX:
     Math.floor(Math.random() * 5 + 1) * (Math.round(Math.random()) ? 1 : -1),
   velocityY: Math.floor(Math.random() * 5),
@@ -146,7 +146,7 @@ function resetBall() {
   ball.velocityX = 0;
   ball.velocityY = 0;
   setTimeout(() => {
-    ball.speed = 4;
+    ball.speed = 5;
     ball.velocityX =
       Math.floor(Math.random() * 5 + 1) * (Math.round(Math.random()) ? 1 : -1);
     ball.velocityY = Math.floor(Math.random() * 5);
