@@ -4,9 +4,25 @@ const canvasText = canvas.getContext("2d");
 
 const is_mobile =
   !!navigator.userAgent.match(/iphone|android|blackberry/gi) || false;
-if (is_mobile) {
-  screen.orientation.lock("landscape");
+// if (is_mobile) {
+//   screen.orientation.lock("landscape");
+// }
+
+function openFullscreen() {
+  if (canvas.requestFullscreen) {
+    canvas.requestFullscreen();
+  } else if (canvas.mozRequestFullScreen) {
+    /* Firefox */
+    canvas.mozRequestFullScreen();
+  } else if (canvas.webkitRequestFullscreen) {
+    /* Chrome, Safari and Opera */
+    canvas.webkitRequestFullscreen();
+  } else if (canvas.msRequestFullscreen) {
+    /* IE/Edge */
+    canvas.msRequestFullscreen();
+  }
 }
+openFullscreen();
 
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
