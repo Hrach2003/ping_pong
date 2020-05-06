@@ -24,7 +24,7 @@ openFullscreen();
 
 if (is_mobile) {
   screen.orientation
-    .lock("portrait")
+    .lock("landscape")
     .then(function () {
       alert("Locked");
     })
