@@ -5,21 +5,21 @@ const canvasText = canvas.getContext("2d");
 const is_mobile =
   !!navigator.userAgent.match(/iphone|android|blackberry/gi) || false;
 
-// function openFullscreen() {
-//   if (canvas.requestFullscreen) {
-//     canvas.requestFullscreen();
-//   } else if (canvas.mozRequestFullScreen) {
-//     /* Firefox */
-//     canvas.mozRequestFullScreen();
-//   } else if (canvas.webkitRequestFullscreen) {
-//     /* Chrome, Safari and Opera */
-//     canvas.webkitRequestFullscreen();
-//   } else if (canvas.msRequestFullscreen) {
-//     /* IE/Edge */
-//     canvas.msRequestFullscreen();
-//   }
-// }
-// openFullscreen();
+function openFullscreen() {
+  if (canvas.requestFullscreen) {
+    canvas.requestFullscreen();
+  } else if (canvas.mozRequestFullScreen) {
+    /* Firefox */
+    canvas.mozRequestFullScreen();
+  } else if (canvas.webkitRequestFullscreen) {
+    /* Chrome, Safari and Opera */
+    canvas.webkitRequestFullscreen();
+  } else if (canvas.msRequestFullscreen) {
+    /* IE/Edge */
+    canvas.msRequestFullscreen();
+  }
+}
+openFullscreen();
 
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
@@ -47,10 +47,10 @@ const com = {
 const ball = {
   x: canvas.width / 2,
   y: canvas.height / 2,
-  radius: canvas.height / 75,
+  radius: canvas.height / 60,
   speed: 5,
   velocityX:
-    Math.floor(Math.random() * 7 + 01) * (Math.round(Math.random()) ? 1 : -1),
+    Math.floor(Math.random() * 7 + 1) * (Math.round(Math.random()) ? 1 : -1),
   velocityY: Math.floor(Math.random() * 7),
   color: "white",
 };
@@ -144,7 +144,7 @@ function resetBall() {
 
   ball.speed = 5;
   ball.velocityX =
-    Math.floor(Math.random() * 7) * (Math.round(Math.random()) ? 1 : -1);
+    Math.floor(Math.random() * 7 + 1) * (Math.round(Math.random()) ? 1 : -1);
   ball.velocityY = Math.floor(Math.random() * 7);
 }
 //update : pos , mov , score
