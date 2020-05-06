@@ -50,8 +50,8 @@ const ball = {
   radius: canvas.height / 60,
   speed: 5,
   velocityX:
-    Math.floor(Math.random() * 7 + 1) * (Math.round(Math.random()) ? 1 : -1),
-  velocityY: Math.floor(Math.random() * 7),
+    Math.floor(Math.random() * 5 + 1) * (Math.round(Math.random()) ? 1 : -1),
+  velocityY: Math.floor(Math.random() * 5),
   color: "white",
 };
 const net = {
@@ -144,8 +144,8 @@ function resetBall() {
 
   ball.speed = 5;
   ball.velocityX =
-    Math.floor(Math.random() * 7 + 1) * (Math.round(Math.random()) ? 1 : -1);
-  ball.velocityY = Math.floor(Math.random() * 7);
+    Math.floor(Math.random() * 5 + 1) * (Math.round(Math.random()) ? 1 : -1);
+  ball.velocityY = Math.floor(Math.random() * 5);
 }
 //update : pos , mov , score
 function update() {
