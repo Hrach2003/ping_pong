@@ -25,21 +25,21 @@ if (window.innerWidth < window.innerHeight) {
   canvas.height = (window.innerWidth * 2) / 3;
   canvas.width = window.innerWidth;
 }
-
+const Rect = {
+  width: canvas.width / 75,
+  height: canvas.height / 4,
+  color: "white",
+};
 const user = {
-  width: canvas.width / 100,
-  height: canvas.height / 5,
+  ...Rect,
   x: canvas.width / 200,
   y: canvas.height / 2 - canvas.height / 10,
-  color: "white",
   score: 0,
 };
 const com = {
+  ...Rect,
   x: canvas.width - canvas.width / 50,
-  y: canvas.height / 2 - 100 / 2,
-  width: canvas.width / 100,
-  height: canvas.height / 5,
-  color: "white",
+  y: canvas.height / 2 - canvas.height / 10,
   score: 0,
 };
 const ball = {
@@ -47,7 +47,8 @@ const ball = {
   y: canvas.height / 2,
   radius: canvas.height / 75,
   speed: 5,
-  velocityX: Math.floor(Math.random() * 7) + 1,
+  velocityX:
+    Math.floor(Math.random() * 7 + 01) * (Math.round(Math.random()) ? 1 : -1),
   velocityY: Math.floor(Math.random() * 7),
   color: "white",
 };
@@ -106,7 +107,9 @@ function render() {
 }
 //control the user paddle
 canvas.addEventListener("mousemove", movePaddle);
-
+if (is_mobile) {
+  canvas.addEventListener("touchmove", movePaddle);
+}
 function movePaddle(evt) {
   let rect = canvas.getBoundingClientRect();
 
@@ -135,7 +138,8 @@ function resetBall() {
   ball.y = canvas.height / 2;
 
   ball.speed = 5;
-  ball.velocityX = Math.floor(Math.random() * 7) + 1;
+  ball.velocityX =
+    Math.floor(Math.random() * 7) * (Math.round(Math.random()) ? 1 : -1);
   ball.velocityY = Math.floor(Math.random() * 7);
 }
 //update : pos , mov , score
