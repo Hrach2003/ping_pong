@@ -111,14 +111,17 @@ function render() {
   drawCircle(ball.x, ball.y, ball.radius, ball.color);
 }
 //control the user paddle
-canvas.addEventListener("mousemove", movePaddle);
+canvas.addEventListener("mousemove", (e) => {
+  movePaddle(e.clientY);
+});
 if (is_mobile) {
-  document.addEventListener("touchmove", movePaddle);
+  document.addEventListener("touchmove", (e) => {
+    movePaddle(e.changedTouches[0].clientY);
+  });
 }
-function movePaddle(evt) {
+function movePaddle(clientY) {
   let rect = canvas.getBoundingClientRect();
-
-  user.y = evt.clientY - rect.top - user.height / 2;
+  user.y = clientY - rect.top - user.height / 2;
 }
 
 //collision detection
