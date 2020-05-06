@@ -19,7 +19,19 @@ function openFullscreen() {
     canvas.msRequestFullscreen();
   }
 }
+
 openFullscreen();
+
+if (is_mobile) {
+  screen.orientation
+    .lock("portrait")
+    .then(function () {
+      alert("Locked");
+    })
+    .catch(function (error) {
+      alert(error);
+    });
+}
 
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
